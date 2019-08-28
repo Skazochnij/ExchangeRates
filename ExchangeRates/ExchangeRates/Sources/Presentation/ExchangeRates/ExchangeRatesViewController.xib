@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExchangeRatesViewController" customModule="ExchangeRates" customModuleProvider="target">
+            <connections>
+                <outlet property="addCurrencyButton" destination="Rs5-gE-M4l" id="N4x-pt-rze"/>
+                <outlet property="addCurrencyLabel" destination="5Ff-N9-C1t" id="YLi-M0-5BC"/>
+                <outlet property="addCurrencyView" destination="itf-bb-5gt" id="AJB-Kr-iSd"/>
+                <outlet property="tableView" destination="OFc-Om-2VF" id="CLE-o8-rBC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="itf-bb-5gt" userLabel="AddCurrency">
+                    <rect key="frame" x="16" y="44" width="382" height="56"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iwp-Kf-wk2">
+                            <rect key="frame" x="0.0" y="16" width="382" height="40"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rs5-gE-M4l" customClass="OrientationalButton" customModule="ExchangeRates" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="40"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
+                                    <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="Add currency pair" image="Plus">
+                                        <color key="titleColor" red="0.0" green="0.45882352939999999" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="0.16931668133802816" green="0.43678897834366193" blue="0.81367910285211276" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isVertical" value="NO"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="pairAddTapped:" destination="-1" eventType="touchUpInside" id="lVf-DL-SMg"/>
+                                    </connections>
+                                </button>
+                                <label hidden="YES" autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a currency pair to compare their live rates" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ff-N9-C1t">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="0.0"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.5450980392" green="0.58431372550000005" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="iwp-Kf-wk2" secondAttribute="trailing" id="0EV-dd-ors"/>
+                        <constraint firstItem="iwp-Kf-wk2" firstAttribute="leading" secondItem="itf-bb-5gt" secondAttribute="leading" id="44N-iu-1TQ"/>
+                        <constraint firstItem="iwp-Kf-wk2" firstAttribute="top" secondItem="itf-bb-5gt" secondAttribute="top" constant="16" id="SNO-ut-Jh8"/>
+                        <constraint firstAttribute="bottom" secondItem="iwp-Kf-wk2" secondAttribute="bottom" id="ZOg-hx-CxQ"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OFc-Om-2VF">
+                    <rect key="frame" x="0.0" y="116" width="414" height="746"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="RQX-vy-d5P"/>
+                        <outlet property="delegate" destination="-1" id="xeS-6c-YGn"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="itf-bb-5gt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="1a2-8I-TXE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OFc-Om-2VF" secondAttribute="bottom" id="Ff9-sg-pqn"/>
+                <constraint firstItem="OFc-Om-2VF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KCn-HH-5jq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="itf-bb-5gt" secondAttribute="trailing" constant="16" id="Tqo-9z-Xzh"/>
+                <constraint firstItem="itf-bb-5gt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" priority="250" id="WYd-ZH-vTR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OFc-Om-2VF" secondAttribute="trailing" id="cgc-oT-M8k"/>
+                <constraint firstItem="itf-bb-5gt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="e0n-sd-ieb"/>
+                <constraint firstItem="OFc-Om-2VF" firstAttribute="top" secondItem="itf-bb-5gt" secondAttribute="bottom" constant="16" id="em2-Dd-5Uv"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Plus" width="40" height="40"/>
+    </resources>
+</document>
